@@ -24,13 +24,13 @@ def anagram(s1,s2):
     dic1 = {}
     dic2 = {}
 
-    for char in s1.replace(" ", ""):
+    for char in s1.replace(" ", "").lower():
         if char not in dic1.keys():
             dic1[char] = 0
         dic1[char] += 1
-    # print(dic1)
+    print(dic1)
 
-    for char in s2.replace(" ", ""):
+    for char in s2.replace(" ", "").lower():
         if char not in dic2.keys():
             dic2[char] = 0
         dic2[char] += 1
