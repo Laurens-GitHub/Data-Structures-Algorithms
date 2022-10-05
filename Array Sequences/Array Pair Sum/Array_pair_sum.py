@@ -44,3 +44,5 @@ def pair_sum(arr,k):
                 answer.add((min(num, arr[i]), max(num, arr[i])))
 
     return len(answer)
+
+#bonus: what is the runtime of this solution? O(n^2) due to nested iteration.
