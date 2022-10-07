@@ -18,6 +18,11 @@
 # 'here space'
 
 def reverser(words):
+    """Reverses the order of words in a sentence
+
+    :param words: str - a string of characters
+    """
+
     split_words = words.split()
     new_sentence = ""
 
@@ -27,4 +32,4 @@ def reverser(words):
 
     return new_sentence.strip()
 
-print(reverser('best the is This'))
+# print(reverser('best the is This'))
