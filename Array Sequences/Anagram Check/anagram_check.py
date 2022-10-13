@@ -28,7 +28,7 @@ def anagram(s1,s2):
         if char not in dic1.keys():
             dic1[char] = 0
         dic1[char] += 1
-    print(dic1)
+    # print(dic1)
 
     for char in s2.replace(" ", "").lower():
         if char not in dic2.keys():
@@ -40,3 +40,45 @@ def anagram(s1,s2):
         return True
 
     return False
+
+
+def anagram2(string1, string2):
+
+    s1 = string1.replace(" ", "").lower()
+    s2 = string2.replace(" ", "").lower()
+
+    if len(s1) != len(s2):
+        return False
+
+    dic1 = {}
+
+    for char in s1:
+        if char not in dic1:
+            dic1[char] = 1
+        else:
+            dic1[char] += 1
+
+    for char in s2:
+        if char in dic1:
+            dic1[char] -= 1
+        else:
+            return False
+
+    # for value in dic1.values():
+    #     if value != 0:
+    #         return False
+
+    return True
+
+# print(anagram2('go go go','GOGO ge')) # False
+
+def test_is_anagram(func):
+    assert func('go go go','gggooo') is True
+    assert func('abc','cba') is True
+    assert func('hi man','hi     man') is True
+    assert func('aabbcc','aabbc') is False
+    assert func('123','1 2') is False
+    return("ALL TEST CASES PASSED")
+
+test = test_is_anagram(anagram2)
+print(test)
