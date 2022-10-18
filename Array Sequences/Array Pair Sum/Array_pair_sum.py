@@ -46,3 +46,26 @@ def pair_sum(arr,k):
     return len(answer)
 
 #bonus: what is the runtime of this solution? O(n^2) due to nested iteration.
+
+
+def pair_sum2(arr,k):
+
+    pairs = set()
+    for num in arr:
+        target = k-num
+        if num in arr and target in arr:
+            pairs.add((min(target,num),max(target,num)))
+
+    return len(pairs)
+
+
+# print(pair_sum2([1,3,2,2],4))
+
+
+def test_pair_sum(func):
+    assert func([1,9,2,8,3,7,4,6,5,5,13,14,11,13,-1],10) == 6
+    assert func([1,2,3,1],3) == 1
+    assert func([1,3,2,2],4) == 2
+    return('ALL TEST CASES PASSED')
+
+print(test_pair_sum(pair_sum2))
