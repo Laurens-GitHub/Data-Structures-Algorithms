@@ -14,13 +14,34 @@ def largest_sum(arr):
 
     return max(sums)
 
-array1 = [1,2,3,4,5]
-print(array1[1:])
+
 # print(largest_sum([1,2,-1,3,4,10,10,-10,-1]))
 
 # def largest_sum2(arr):
+#     """Finds the largest sum and index
 
-#     result = sum(arr)
-#     biggest_arr = [0, -1]
+#     :param arr: list - a list of integers"""
 
-#     for idx, num in enumerate(arr):
+#     current_sum = max_sum = arr[0]
+#     start_idx = 0
+#     end_idx = -1
+
+#     for idx, num in enumerate(arr[1:]):
+#         current_sum=max(current_sum + num, num)
+#         if max_sum < current_sum:
+#             max_sum = current_sum
+#             end_idx = idx
+
+#     return max_sum, start_idx, end_idx
+
+# print(largest_sum2([-1,1]))
+
+# def test_largest_sum2():
+
+#     assert largest_sum2([1,2,-1,3,4,-1]) == (9, 0, 4)
+#     # assert largest_sum2([1,2,-1,3,4,10,10,-10,-1]) == (29, 0, 6)
+#     assert largest_sum2([-1,1]) == (1, 1, -1)
+
+#     return "ALL TEST CASES PASSED"
+
+# # print(test_largest_sum2())
