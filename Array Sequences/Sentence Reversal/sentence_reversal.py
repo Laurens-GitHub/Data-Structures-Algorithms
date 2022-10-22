@@ -24,6 +24,9 @@ def reverser(words):
     """
 
     split_words = words.split()
+    if len(split_words) == 1:
+        return words
+
     new_sentence = ""
 
     while len(split_words) > 0:
@@ -33,3 +36,13 @@ def reverser(words):
     return new_sentence.strip()
 
 # print(reverser('best the is This'))
+
+def test_reverser():
+
+    assert reverser('    space before') == 'before space'
+    assert reverser('space after     ') == 'after space'
+    assert reverser('   Hello Lauren    how are you   ') == 'you are how Lauren Hello'
+    assert reverser('1') == '1'
+    return "ALL TEST CASES PASSED"
+
+print(test_reverser())
