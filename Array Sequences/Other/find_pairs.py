@@ -185,6 +185,8 @@ def find_pairs(arr):
         id1 = ids[start]
 
 
+    print("result is", result)
+    print(dic)
 
     #logic for dictionary values
     for pair in result.keys():
@@ -195,10 +197,12 @@ def find_pairs(arr):
             if course in dic[stu2]:
                 result[pair].append(course)
 
+#  17: ['Linear Algebra', 'Political Science', 'Software Design'],
+#  58: ['Economics', 'Linear Algebra', 'Mechanics', 'Software Design'],
+
+# x = ("student 17 list").intersection("student 58 list")
+
+#another option is to use a second dictionary {courses: ids}
     return result
 
 print(find_pairs(enrollments1))
-
-
-
-
