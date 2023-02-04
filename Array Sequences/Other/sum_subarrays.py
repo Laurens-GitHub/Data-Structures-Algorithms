@@ -25,5 +25,3 @@ assert sum_subsets([5,4,3],3) == 48
 assert sum_subsets([0],1) == 0
 assert sum_subsets([1,2],2) == 6
 assert sum_subsets([1,2,3],3) == 24
-
-
