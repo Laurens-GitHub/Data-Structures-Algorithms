@@ -77,7 +77,7 @@ tickets_7 = ["001-A-1", "002-B-2", "003-C-1", "100-C-2", "123-D-1", "555-D-2", "
 def best_seats(tickets):
 
     if tickets == []:
-        return 10
+        return 0
 
     trans = {"A": 0, "B": 1, "C": 2, "D": 3, "E": 4, "1": 0, "2": 1}
     cars = {}
@@ -107,16 +107,26 @@ def best_seats(tickets):
                 seat = car[r][c]
                 if seat == 0:
                     # look up
-                    if (r >= 1 or car[r-1][c] == 0 or
-                        # look down
-                        r < len(car) - 1 or car[r+1][c] == 0 or
-                        #look left
-                        c <= len(car) - 1 or car[r][c - 1] == 0 or
-                        #look right
-                        c < 1 or car[r][c + 1] == 0):
-                        count += 1
+                    if (r >= 1 and car[r-1][c] != 0):
+                        continue
+                    # look down
+                    if (r < len(car) - 1 and car[r+1][c] != 0):
+                        continue
+                    #look left
+                    if (c == 0 and c <= len(car) - 1 and car[r][c - 1] != 0):
+                        continue
+                    #look right
+                    if (c == 1 and c < 1 and car[r][c + 1] != 0):
+                        continue
+                    count += 1
 
 
     return count
 
 print(best_seats(tickets_1))
+print(best_seats(tickets_2))
+print(best_seats(tickets_3))
+print(best_seats(tickets_4))
+print(best_seats(tickets_5))
+print(best_seats(tickets_6))
+print(best_seats(tickets_7))
